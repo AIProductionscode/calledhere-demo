@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Track Your Order | Called Here Apparel</title>
+  <meta name="description" content="Track your Called Here apparel delivery status and progress from printing to delivery. Wear your purpose.">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="tracking">
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-row-primary">
+      <button class="mobile-nav-toggle btn--icon" id="mobileNavToggle" aria-label="Open mobile navigation menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+
+      <a href="index.html" class="header-logo" aria-label="Called Here Home">
+        CALLED HERE
+        <span class="logo-tagline">Wear your purpose.</span>
+      </a>
+
+      <div class="header-search">
+        <button class="search-pill-btn js-open-search" type="button" aria-label="Open search modal">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <span>Search tees, hoodies, verses…</span>
+        </button>
+      </div>
+
+      <div class="header-actions">
+        <a href="account.html" class="header-action-btn" aria-label="My Account"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg></a>
+        <a href="wishlist.html" class="header-action-btn" aria-label="Wishlist"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><span class="cart-badge js-wishlist-count" style="display:none;">2</span></a>
+        <button class="header-action-btn js-cart-toggle" aria-label="Open Shopping Bag"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 01-8 0"/></svg><span class="cart-badge js-cart-count">2</span></button>
+      </div>
+    </div>
+
+    <nav class="header-row-nav" aria-label="Primary Navigation">
+      <ul class="primary-nav-list">
+        <li class="primary-nav-item"><a href="category-men.html" class="primary-nav-link">MEN</a></li>
+        <li class="primary-nav-item"><a href="category-women.html" class="primary-nav-link">WOMEN</a></li>
+        <li class="primary-nav-item"><a href="category-kids.html" class="primary-nav-link">KIDS</a></li>
+        <li class="primary-nav-item"><a href="shop.html?badge=NEW" class="primary-nav-link">NEW IN</a></li>
+        <li class="primary-nav-item"><a href="shop.html?sub=hoodies" class="primary-nav-link">HOODIES &amp; SWEATSHIRTS</a></li>
+        <li class="primary-nav-item"><a href="shop.html?sub=tees" class="primary-nav-link">TEES</a></li>
+        <li class="primary-nav-item"><a href="category-accessories.html" class="primary-nav-link">ACCESSORIES</a></li>
+        <li class="primary-nav-item"><a href="shop.html?filter=sale" class="primary-nav-link is-sale">SALE</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" class="section">
+    <div class="container container--narrow">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="crumb-sep">/</span>
+        <span class="crumb-current">Order Tracking</span>
+      </nav>
+
+      <div class="section-header t-center">
+        <span class="section-eyebrow">ORDER STATUS</span>
+        <h1 class="t-h1">TRACK YOUR ORDER</h1>
+        <p class="t-body t-muted">Enter your order ID and email to check live printing and delivery progress.</p>
+      </div>
+
+      <!-- Tracking Search Form -->
+      <div style="background:var(--surface); padding:var(--s-6); margin-bottom:var(--s-8);">
+        <form onsubmit="event.preventDefault(); document.getElementById('trackingResult').style.display='block'; showToast('Order found: #CH-10482');" style="display:flex; gap:12px; flex-wrap:wrap;">
+          <input type="text" class="form-control" placeholder="Order ID (e.g. CH-10482)" value="CH-10482" required style="flex:1; min-width:200px; background:#fff;">
+          <input type="email" class="form-control" placeholder="Billing Email" value="israel.customer@example.com" required style="flex:1; min-width:200px; background:#fff;">
+          <button type="submit" class="btn btn--primary">TRACK ORDER</button>
+        </form>
+      </div>
+
+      <!-- Demo Result Progress Tracker -->
+      <div id="trackingResult" style="border:1px solid var(--line); padding:clamp(24px, 4vw, 48px); margin-bottom:var(--s-8);">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; border-bottom:var(--border-hairline); padding-bottom:var(--s-4); margin-bottom:var(--s-6); flex-wrap:wrap; gap:8px;">
+          <div>
+            <h2 class="t-h2" style="font-size:20px;">ORDER #CH-10482</h2>
+            <div class="t-small t-muted">Placed on Nov 7, 2026 • USPS Priority: 9400 1000 0000 0000 0000 00</div>
+          </div>
+          <div>
+            <span class="badge-pill" style="background:var(--accent);">SHIPPED — IN TRANSIT</span>
+          </div>
+        </div>
+
+        <!-- 5-Step Horizontal Progress Tracker -->
+        <div class="order-tracker-stepper">
+          <div class="tracker-step is-done">
+            <div class="tracker-step__dot">✓</div>
+            <div class="tracker-step__label">Ordered</div>
+            <div class="t-small t-muted" style="font-size:10px;">Nov 7</div>
+          </div>
+          <div class="tracker-step is-done">
+            <div class="tracker-step__dot">✓</div>
+            <div class="tracker-step__label">Printed</div>
+            <div class="t-small t-muted" style="font-size:10px;">Nov 8</div>
+          </div>
+          <div class="tracker-step is-active">
+            <div class="tracker-step__dot">3</div>
+            <div class="tracker-step__label" style="color:var(--black); font-weight:700;">Shipped</div>
+            <div class="t-small t-muted" style="font-size:10px;">Nov 9</div>
+          </div>
+          <div class="tracker-step">
+            <div class="tracker-step__dot">4</div>
+            <div class="tracker-step__label">Out for Delivery</div>
+            <div class="t-small t-muted" style="font-size:10px;">Est. Nov 12</div>
+          </div>
+          <div class="tracker-step">
+            <div class="tracker-step__dot">5</div>
+            <div class="tracker-step__label">Delivered</div>
+            <div class="t-small t-muted" style="font-size:10px;">Est. Nov 13</div>
+          </div>
+        </div>
+
+        <!-- Package Contents Details -->
+        <div style="background:var(--surface); padding:var(--s-5); margin-top:var(--s-6); display:flex; flex-direction:column; gap:12px;">
+          <h3 class="t-label">Package Items</h3>
+          <div style="display:flex; justify-content:space-between; font-size:14px;">
+            <span>1 × Called Here Embroidered: Grow in Grace Cuffed Beanie (Black)</span>
+            <span class="t-price">$27.75</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; font-size:14px;">
+            <span>1 × Called Here Faith Over Fear Crewneck Sweatshirt (Black / L)</span>
+            <span class="t-price">$47.13</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <h3 class="footer-col__title">Shop</h3>
+          <ul class="footer-col__list">
+            <li><a href="category-men.html" class="footer-col__link">Men</a></li>
+            <li><a href="category-women.html" class="footer-col__link">Women</a></li>
+            <li><a href="category-kids.html" class="footer-col__link">Kids</a></li>
+            <li><a href="shop.html" class="footer-col__link">Shop All</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-col__title">Help</h3>
+          <ul class="footer-col__list">
+            <li><a href="account.html" class="footer-col__link">My Account</a></li>
+            <li><a href="order-tracking.html" class="footer-col__link">Order Tracking</a></li>
+            <li><a href="wishlist.html" class="footer-col__link">Wishlist</a></li>
+            <li><a href="cart.html" class="footer-col__link">Cart</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-col__title">Company</h3>
+          <ul class="footer-col__list">
+            <li><a href="about.html" class="footer-col__link">About Us</a></li>
+            <li><a href="terms.html" class="footer-col__link">Terms</a></li>
+            <li><a href="privacy-policy.html" class="footer-col__link">Privacy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-col__title">Contact</h3>
+          <div class="footer-contact-info"><p>support@calledhere.com</p><p>Fishers, IN 46038</p></div>
+        </div>
+        <div>
+          <h3 class="footer-col__title">Join the Calling</h3>
+          <form class="js-newsletter-form" style="display:flex; flex-direction:column; gap:8px;">
+            <input type="email" placeholder="Your email" required class="form-control" style="background:rgba(255,255,255,0.1); border-color:transparent; color:#fff;">
+            <button type="submit" class="btn btn--outline-white btn--sm">SUBSCRIBE</button>
+          </form>
+          <div class="form-success-banner">✓ Subscribed!</div>
+        </div>
+      </div>
+      <div class="footer-wordmark-row"><div class="footer-wordmark">CALLED HERE</div></div>
+      <div class="footer-bottom"><div>© 2026 Called Here. Wear your purpose.</div></div>
+    </div>
+  </footer>
+
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="drawer drawer--left" id="mobileNavDrawer" aria-label="Mobile Navigation" role="dialog" aria-modal="true">
+    <div class="drawer__header"><span class="t-h3" style="font-weight:800;">MENU</span><button class="btn--icon" id="mobileNavClose" aria-label="Close menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg></button></div>
+    <div class="drawer__body">
+      <ul class="mobile-nav__list">
+        <li class="mobile-nav__item"><a href="category-men.html" class="mobile-nav__link">Men</a></li>
+        <li class="mobile-nav__item"><a href="category-women.html" class="mobile-nav__link">Women</a></li>
+        <li class="mobile-nav__item"><a href="category-kids.html" class="mobile-nav__link">Kids</a></li>
+        <li class="mobile-nav__item"><a href="category-accessories.html" class="mobile-nav__link">Accessories</a></li>
+      </ul>
+    </div>
+  </aside>
+  <aside class="drawer drawer--right" id="miniCartDrawer" aria-label="Shopping Bag" role="dialog" aria-modal="true">
+    <div class="drawer__header"><span class="t-h3" style="font-weight:800;">YOUR BAG (<span class="js-cart-count">2</span>)</span><button class="btn--icon" id="miniCartClose" aria-label="Close bag"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg></button></div>
+    <div class="drawer__body"><div class="cart-items-list" id="miniCartItems"></div></div>
+    <div class="drawer__footer" id="miniCartFooter"><a href="checkout.html" class="btn btn--primary btn--full">CHECKOUT</a></div>
+  </aside>
+
+  <div class="toast-container" id="toastContainer"></div>
+  <script src="js/main.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Account | Called Here Apparel</title>
+  <meta name="description" content="Manage your orders, addresses, and account details on Called Here Apparel.">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="account">
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-row-primary">
+      <button class="mobile-nav-toggle btn--icon" id="mobileNavToggle" aria-label="Open mobile navigation menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+
+      <a href="index.html" class="header-logo" aria-label="Called Here Home">
+        CALLED HERE
+        <span class="logo-tagline">Wear your purpose.</span>
+      </a>
+
+      <div class="header-search">
+        <button class="search-pill-btn js-open-search" type="button" aria-label="Open search modal">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <span>Search tees, hoodies, verses…</span>
+        </button>
+      </div>
+
+      <div class="header-actions">
+        <a href="account.html" class="header-action-btn" aria-label="My Account" style="background:var(--surface);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg></a>
+        <a href="wishlist.html" class="header-action-btn" aria-label="Wishlist"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><span class="cart-badge js-wishlist-count" style="display:none;">2</span></a>
+        <button class="header-action-btn js-cart-toggle" aria-label="Open Shopping Bag"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 01-8 0"/></svg><span class="cart-badge js-cart-count">2</span></button>
+      </div>
+    </div>
+
+    <nav class="header-row-nav" aria-label="Primary Navigation">
+      <ul class="primary-nav-list">
+        <li class="primary-nav-item"><a href="category-men.html" class="primary-nav-link">MEN</a></li>
+        <li class="primary-nav-item"><a href="category-women.html" class="primary-nav-link">WOMEN</a></li>
+        <li class="primary-nav-item"><a href="category-kids.html" class="primary-nav-link">KIDS</a></li>
+        <li class="primary-nav-item"><a href="shop.html?badge=NEW" class="primary-nav-link">NEW IN</a></li>
+        <li class="primary-nav-item"><a href="shop.html?sub=hoodies" class="primary-nav-link">HOODIES &amp; SWEATSHIRTS</a></li>
+        <li class="primary-nav-item"><a href="shop.html?sub=tees" class="primary-nav-link">TEES</a></li>
+        <li class="primary-nav-item"><a href="category-accessories.html" class="primary-nav-link">ACCESSORIES</a></li>
+        <li class="primary-nav-item"><a href="shop.html?filter=sale" class="primary-nav-link is-sale">SALE</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">MY ACCOUNT</span>
+        <h1 class="t-h1">HELLO, ISRAEL</h1>
+      </div>
+
+      <div class="account-layout js-tabs">
+        <!-- Left Vertical Tab Menu -->
+        <nav class="account-nav-list" role="tablist" aria-label="Account Tabs">
+          <button class="account-nav-btn tab-btn is-active" data-target="#tab-dashboard" role="tab" aria-selected="true">Dashboard</button>
+          <button class="account-nav-btn tab-btn" data-target="#tab-orders" role="tab" aria-selected="false">Orders</button>
+          <button class="account-nav-btn tab-btn" data-target="#tab-tracking" role="tab" aria-selected="false">Order Tracking</button>
+          <button class="account-nav-btn tab-btn" data-target="#tab-addresses" role="tab" aria-selected="false">Addresses</button>
+          <button class="account-nav-btn tab-btn" data-target="#tab-details" role="tab" aria-selected="false">Account Details</button>
+          <a href="wishlist.html" class="account-nav-btn" style="text-decoration:none;">Wishlist (2)</a>
+          <a href="account-login.html" class="account-nav-btn" style="color:var(--ink-3); text-decoration:none; margin-top:var(--s-4);">Log Out</a>
+        </nav>
+
+        <!-- Right Panels -->
+        <div>
+          <!-- 1. Dashboard Tab -->
+          <div class="account-tab-panel tab-panel is-active" id="tab-dashboard" role="tabpanel">
+            <p class="t-body" style="margin-bottom:var(--s-6);">
+              From your account dashboard you can view your recent orders, manage your shipping and billing addresses, and edit your password and account details.
+            </p>
+
+            <!-- Quick Cards 3-up -->
+            <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:var(--s-4); margin-bottom:var(--s-7);">
+              <div style="background:var(--surface); padding:var(--s-5);">
+                <div class="t-label t-muted" style="margin-bottom:4px;">Recent Order</div>
+                <div class="t-h3" style="font-size:18px; margin-bottom:4px;">#CH-10482</div>
+                <div class="t-small" style="color:var(--success); font-weight:600; margin-bottom:8px;">Processing</div>
+                <a href="#tab-orders" class="link-cta" onclick="document.querySelector('[data-target=\'#tab-orders\']').click();">View order</a>
+              </div>
+
+              <div style="background:var(--surface); padding:var(--s-5);">
+                <div class="t-label t-muted" style="margin-bottom:4px;">Default Address</div>
+                <div class="t-small" style="line-height:1.4; margin-bottom:8px;">
+                  11807 Allisonville Rd<br>Fishers, IN 46038
+                </div>
+                <a href="#tab-addresses" class="link-cta" onclick="document.querySelector('[data-target=\'#tab-addresses\']').click();">Manage addresses</a>
+              </div>
+
+              <div style="background:var(--surface); padding:var(--s-5);">
+                <div class="t-label t-muted" style="margin-bottom:4px;">Wishlist Items</div>
+                <div class="t-h3" style="font-size:24px; font-weight:800; margin-bottom:4px;">2 Saved</div>
+                <a href="wishlist.html" class="link-cta">View wishlist</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Orders Tab -->
+          <div class="account-tab-panel tab-panel" id="tab-orders" role="tabpanel">
+            <h2 class="t-h2" style="font-size:22px; margin-bottom:var(--s-4);">ORDER HISTORY</h2>
+            <div style="display:flex; flex-direction:column; gap:var(--s-4);">
+              <div style="border:1px solid var(--line); padding:var(--s-5); display:grid; grid-template-columns:repeat(5, 1fr); align-items:center;">
+                <div>
+                  <div class="t-label t-muted">Order Number</div>
+                  <strong>#CH-10482</strong>
+                </div>
+                <div>
+                  <div class="t-label t-muted">Date</div>
+                  <span>Nov 7, 2026</span>
+                </div>
+                <div>
+                  <div class="t-label t-muted">Status</div>
+                  <span class="badge-pill" style="background:var(--black); font-size:9px;">PROCESSING</span>
+                </div>
+                <div>
+                  <div class="t-label t-muted">Total</div>
+                  <strong class="t-price">$74.88 (2 items)</strong>
+                </div>
+                <div class="t-right">
+                  <a href="order-confirmation.html" class="btn btn--secondary btn--sm">VIEW RECEIPT</a>
+                </div>
+              </div>
+
+              <div style="border:1px solid var(--line); padding:var(--s-5); display:grid; grid-template-columns:repeat(5, 1fr); align-items:center;">
+                <div>
+                  <div class="t-label t-muted">Order Number</div>
+                  <strong>#CH-09821</strong>
+                </div>
+                <div>
+                  <div class="t-label t-muted">Date</div>
+                  <span>Oct 14, 2026</span>
+                </div>
+                <div>
+                  <div class="t-label t-muted">Status</div>
+                  <span class="badge-pill" style="background:var(--success); font-size:9px;">DELIVERED</span>
+                </div>
+                <div>
+                  <div class="t-label t-muted">Total</div>
+                  <strong class="t-price">$47.13 (1 item)</strong>
+                </div>
+                <div class="t-right">
+                  <a href="order-tracking.html?order=CH-09821" class="btn btn--secondary btn--sm">TRACKING</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Order Tracking Tab -->
+          <div class="account-tab-panel tab-panel" id="tab-tracking" role="tabpanel">
+            <h2 class="t-h2" style="font-size:22px; margin-bottom:var(--s-4);">TRACK AN ORDER</h2>
+            <div style="background:var(--surface); padding:var(--s-6); margin-bottom:var(--s-6);">
+              <form action="order-tracking.html" method="get" style="display:flex; gap:12px; flex-wrap:wrap;">
+                <input type="text" name="order" class="form-control" placeholder="Order ID (e.g. CH-10482)" value="CH-10482" style="flex:1; min-width:200px; background:#fff;">
+                <input type="email" name="email" class="form-control" placeholder="Billing email" value="israel.customer@example.com" style="flex:1; min-width:200px; background:#fff;">
+                <button type="submit" class="btn btn--primary">TRACK</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- 4. Addresses Tab -->
+          <div class="account-tab-panel tab-panel" id="tab-addresses" role="tabpanel">
+            <h2 class="t-h2" style="font-size:22px; margin-bottom:var(--s-4);">SAVED ADDRESSES</h2>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:var(--s-5);">
+              <div style="border:1px solid var(--line); padding:var(--s-5);">
+                <div style="display:flex; justify-content:space-between; margin-bottom:var(--s-3);">
+                  <strong class="t-label">Default Shipping Address</strong>
+                  <button class="link-cta" style="font-size:11px;">Edit</button>
+                </div>
+                <div class="t-body" style="font-size:14px; line-height:1.6;">
+                  Israel Adler<br>
+                  11807 Allisonville Rd, Unit #1121<br>
+                  Fishers, IN 46038<br>
+                  United States<br>
+                  Phone: (317) 555-0192
+                </div>
+              </div>
+
+              <div style="border:1px solid var(--line); padding:var(--s-5);">
+                <div style="display:flex; justify-content:space-between; margin-bottom:var(--s-3);">
+                  <strong class="t-label">Billing Address</strong>
+                  <button class="link-cta" style="font-size:11px;">Edit</button>
+                </div>
+                <div class="t-body" style="font-size:14px; line-height:1.6;">
+                  Same as shipping address.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. Account Details Tab -->
+          <div class="account-tab-panel tab-panel" id="tab-details" role="tabpanel">
+            <h2 class="t-h2" style="font-size:22px; margin-bottom:var(--s-4);">ACCOUNT DETAILS</h2>
+            <form onsubmit="event.preventDefault(); showToast('✓ Account details updated successfully');" style="max-width:540px; display:flex; flex-direction:column; gap:var(--s-4);">
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:var(--s-4);">
+                <div class="form-group">
+                  <label class="form-label" for="accFirst">First Name</label>
+                  <input type="text" id="accFirst" class="form-control" value="Israel" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="accLast">Last Name</label>
+                  <input type="text" id="accLast" class="form-control" value="Adler" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="accEmail">Email Address</label>
+                <input type="email" id="accEmail" class="form-control" value="israel.customer@example.com" required>
+              </div>
+
+              <div style="margin-top:var(--s-3); border-top:var(--border-hairline); padding-top:var(--s-4);">
+                <h3 class="t-label" style="margin-bottom:var(--s-3);">Change Password</h3>
+                <div class="form-group" style="margin-bottom:var(--s-3);">
+                  <label class="form-label" for="curPass">Current Password</label>
+                  <input type="password" id="curPass" class="form-control" placeholder="••••••••">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="newPass">New Password</label>
+                  <input type="password" id="newPass" class="form-control" placeholder="Leave blank to keep same">
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn--primary" style="margin-top:var(--s-2); align-self:flex-start;">SAVE CHANGES</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <h3 class="footer-col__title">Shop</h3>
+          <ul class="footer-col__list">
+            <li><a href="category-men.html" class="footer-col__link">Men</a></li>
+            <li><a href="category-women.html" class="footer-col__link">Women</a></li>
+            <li><a href="category-kids.html" class="footer-col__link">Kids</a></li>
+            <li><a href="shop.html" class="footer-col__link">Shop All</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-col__title">Help</h3>
+          <ul class="footer-col__list">
+            <li><a href="account.html" class="footer-col__link">My Account</a></li>
+            <li><a href="order-tracking.html" class="footer-col__link">Order Tracking</a></li>
+            <li><a href="wishlist.html" class="footer-col__link">Wishlist</a></li>
+            <li><a href="cart.html" class="footer-col__link">Cart</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-col__title">Company</h3>
+          <ul class="footer-col__list">
+            <li><a href="about.html" class="footer-col__link">About Us</a></li>
+            <li><a href="terms.html" class="footer-col__link">Terms</a></li>
+            <li><a href="privacy-policy.html" class="footer-col__link">Privacy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-col__title">Contact</h3>
+          <div class="footer-contact-info"><p>support@calledhere.com</p><p>Fishers, IN 46038</p></div>
+        </div>
+        <div>
+          <h3 class="footer-col__title">Join the Calling</h3>
+          <form class="js-newsletter-form" style="display:flex; flex-direction:column; gap:8px;">
+            <input type="email" placeholder="Your email" required class="form-control" style="background:rgba(255,255,255,0.1); border-color:transparent; color:#fff;">
+            <button type="submit" class="btn btn--outline-white btn--sm">SUBSCRIBE</button>
+          </form>
+          <div class="form-success-banner">✓ Subscribed!</div>
+        </div>
+      </div>
+      <div class="footer-wordmark-row"><div class="footer-wordmark">CALLED HERE</div></div>
+      <div class="footer-bottom"><div>© 2026 Called Here. Wear your purpose.</div></div>
+    </div>
+  </footer>
+
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="drawer drawer--left" id="mobileNavDrawer" aria-label="Mobile Navigation" role="dialog" aria-modal="true">
+    <div class="drawer__header"><span class="t-h3" style="font-weight:800;">MENU</span><button class="btn--icon" id="mobileNavClose" aria-label="Close menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg></button></div>
+    <div class="drawer__body">
+      <ul class="mobile-nav__list">
+        <li class="mobile-nav__item"><a href="category-men.html" class="mobile-nav__link">Men</a></li>
+        <li class="mobile-nav__item"><a href="category-women.html" class="mobile-nav__link">Women</a></li>
+        <li class="mobile-nav__item"><a href="category-kids.html" class="mobile-nav__link">Kids</a></li>
+        <li class="mobile-nav__item"><a href="category-accessories.html" class="mobile-nav__link">Accessories</a></li>
+      </ul>
+    </div>
+  </aside>
+  <aside class="drawer drawer--right" id="miniCartDrawer" aria-label="Shopping Bag" role="dialog" aria-modal="true">
+    <div class="drawer__header"><span class="t-h3" style="font-weight:800;">YOUR BAG (<span class="js-cart-count">2</span>)</span><button class="btn--icon" id="miniCartClose" aria-label="Close bag"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg></button></div>
+    <div class="drawer__body"><div class="cart-items-list" id="miniCartItems"></div></div>
+    <div class="drawer__footer" id="miniCartFooter"><a href="checkout.html" class="btn btn--primary btn--full">CHECKOUT</a></div>
+  </aside>
+
+  <div class="toast-container" id="toastContainer"></div>
+  <script src="js/main.js"></script>
+</body>
+</html>
+
